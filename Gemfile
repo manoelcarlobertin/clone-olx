@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-
+# Ruby 3.4.1
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -39,13 +39,14 @@ gem "kamal", require: false
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
-
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem 'rspec-rails', '~> 6.0' # versão compatível com Rails 8
 
+  gem 'shoulda-matchers' # Matchers para testes
+  gem 'factory_bot_rails'# Fábricas para testes
+  gem 'faker'            # Dados falsos para testes
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
@@ -57,3 +58,12 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
+
+gem "devise", "~> 4.9.4" # Autenticação do usuário
+
+gem 'simple_form'      # Formulários simples
+gem 'ransack'          # Busca avançada
+gem 'pundit'           # Permissionamento
+gem 'image_processing' # Processamento de imagens
+gem 'redis'            # Cache e background jobs
+gem 'money-rails'
