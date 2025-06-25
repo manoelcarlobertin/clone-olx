@@ -1,4 +1,5 @@
 class Property < ApplicationRecord
+  has_rich_text :description
   # Validação para garantir que as colunas na tabela imoveis estejam presentes
   validates :title, presence: true, uniqueness: true
   validates :size, presence: true

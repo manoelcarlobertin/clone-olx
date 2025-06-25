@@ -1,0 +1,15 @@
+<%= simple_form_for(@property, wrapper: :tabler, html: { class: "space-y-6" }) do |f| %>
+  <%= f.error_notification class: "alert alert-danger bg-red-100 text-red-800 px-4 py-2 rounded" %>
+
+  <%= f.input :title, label: "Título" %>
+  <%= f.rich_text_area :description, label: "Descrição dos detalhes" %>
+
+  <%= f.input :size, label: "Área (m²)", as: :number %>
+  <%= f.input :bedroom_count,label: "Quartos", as: :number %>
+  <%= f.input :bathroom_count,label:"Banheiros", as: :number %>
+
+  <div class="mt-6">
+    <%= f.button :submit, @property.persisted? ? "Atualizar" : "Criar" ,
+      class: "btn btn-primary bg-windows-blue hover:bg-windows-blue/90 text-windows-light w-full sm:w-auto" %>
+  </div>
+<% end %>
